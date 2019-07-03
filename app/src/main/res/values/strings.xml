@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">AndroidKotlinBootcamp</string>
+    <string name="basketball_league">Basketball League</string>
+    <string name="today_match">Today Match</string>
+    <string name="team_a">Team A</string>
+    <string name="team_b">Team B</string>
+    <string name="match_begin">Match Begin</string>
+    <string name="previous_match">Previous Match</string>
+    <string name="match_score">Match Score</string>
+    <string name="point_3">+3 Points</string>
+    <string name="point_2">+2 Points</string>
+    <string name="free_throw">Free Throw</string>
+    <string name="reset">Reset</string>
+    <string name="save">Save</string>
 </resources>

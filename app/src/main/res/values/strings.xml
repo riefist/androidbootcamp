@@ -12,4 +12,5 @@
     <string name="free_throw">Free Throw</string>
     <string name="reset">Reset</string>
     <string name="save">Save</string>
+    <string name="vs">VS</string>
 </resources>

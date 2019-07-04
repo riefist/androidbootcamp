@@ -169,7 +169,7 @@
             android:layout_marginStart="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="8dp"
-            style="@style/Widget.AppCompat.Button.Colored"/>
+            style="@style/Widget.AppCompat.Button.Colored" android:onClick="saveScoreData"/>
 
     <Button
             android:text="@string/reset"

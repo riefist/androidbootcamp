@@ -1,5 +1,7 @@
 package thortechasia.android.androidkotlinbootcamp
 
+import android.app.Activity
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -10,15 +12,20 @@ class ScoreActivity : AppCompatActivity() {
     private var scoreA = 0
     private var scoreB = 0
 
+    private lateinit var match: Match
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_score)
 
-        val teamA = intent.getStringExtra(EXTRA_TEAM_A)
-        val teamB = intent.getStringExtra(EXTRA_TEAM_B)
+//        val teamA = intent.getStringExtra(EXTRA_TEAM_A)
+//        val teamB = intent.getStringExtra(EXTRA_TEAM_B)
 
-        txt_nama_team_a.text = teamA
-        txt_nama_team_b.text = teamB
+        // get object match from main activity
+        match = intent.getParcelableExtra(EXTRA_MATCH)
+
+        txt_nama_team_a.text = match.teamA
+        txt_nama_team_b.text = match.teamB
 
         teamAButtonListener()
 
@@ -38,6 +45,18 @@ class ScoreActivity : AppCompatActivity() {
         scoreA += 1
         txt_score_a.text = "$scoreA"
 
+    }
+
+    fun saveScoreData(view: View){
+        //TODO kirim result object match ke halaman main activity
+
+        match.scoreA = scoreA
+        match.scoreB = scoreB
+
+        val intent = Intent().putExtra(EXTRA_MATCH, match)
+
+        setResult(Activity.RESULT_OK, intent)
+        finish()
     }
 
     fun resetScore(view: View){
